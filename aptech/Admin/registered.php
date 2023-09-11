@@ -74,7 +74,7 @@ include("conn.php")
                     <div class="modal-body">
                         <input type="hidden" name="usr_id" class="del_id">
                         <p>
-                            are you sure you want to delet this data ?
+                            Are you sure you want to delet this data ?
                         </p>
 
                     </div>
