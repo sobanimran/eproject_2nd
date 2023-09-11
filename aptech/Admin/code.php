@@ -164,13 +164,13 @@ if (isset($_POST['logout_btn'])) {
     exit(0);
 }
 
-if (isset($_POST['chk_emailbtn'])) {
+if (isset($_POST['chk_Emailbtn'])) {
     $email = $_POST["email"];
-    $qu_chek = mysqli_query($con, "SELECT email FROM users WHERE email='$email'");
-    if (mysqli_num_rows($qu_chek) > 0) {
-        echo "email id already taken";
+    $qu_chak = mysqli_query($con, "SELECT email FROM users WHERE email='$email'");
+    if (mysqli_num_rows($qu_chak) > 0) {
+        echo "<h3 style='color:red;'>Email Id Already Taken</h3>";
     } else {
-        echo "its avalible";
+        echo 'Avalible';
     }
     ;
 

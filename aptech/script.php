@@ -15,6 +15,7 @@
 				dropdownParent: $(this).next('.dropDownSelect2')
 			});
 		})
+	
 	</script>
 <!--===============================================================================================-->
 	<script src="vendor/daterangepicker/moment.min.js"></script>

@@ -190,19 +190,24 @@ include("conn.php")
             var email = $('.email_id').val();
 
             console.log(email)
-        })
+       
         $.ajax({
             type: "POST",
             url: "code.php",
             data: {
-                'chk_emailbtn': 1,
+                'chk_Emailbtn': 1,
                 'email': email,
             },
             success: function (response) {
-                console.log(response)
-                $('.email_error').text(response);
+               if(response == 'Avalible'){
+                $('.email_error').text(response).css('color','green');
+            }else{
+                $('.email_error').text(response).css('color','red');
+
+            }
             }
         })
+    })
     });
 
 </script>

@@ -233,11 +233,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   font-family: Poppins-Regular;
   font-size: 12px;
   line-height: 1.8;
-  color: #b2b2b2;
+  color: #b2b1b1;
 }
 
 
-/*---------------------------------------------*/
+/*---------------------------------------------
 .right-top-bar a {
   font-family: Poppins-Regular;
   font-size: 12px;
@@ -257,7 +257,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 
-/*---------------------------------------------*/
+/*---------------------------------------------
 .topbar-mobile li {
   padding: 8px 20px;
   border-top: 1px solid rgba(255,255,255,0.05);
@@ -275,7 +275,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   background-color: transparent;
   width: 100%;
   height: 84px;
-  top: 40px;
+  top: 30px;
   left: 0px; 
 
   -webkit-transition: height 0.3s, background-color 0.3s;
@@ -378,7 +378,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .header-v3 .main-menu > li > a {
-  color: #fff;
+  color: #bd1d1d !important;
 }
 
 /*---------------------------------------------*/
@@ -1240,7 +1240,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   width: auto;
   height: auto;
   font-size: 80px;
-  color: rgba(0,0,0,0.3);
+  color: rgba(10, 10, 10, 0.885);
   position: absolute;
   opacity: 0;
   
@@ -1263,7 +1263,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .arrow-slick1:hover {
-  color: #7280e0;
+  color: #5d2f3cd7;
 }
 
 .next-slick1 {
@@ -1287,12 +1287,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 /*---------------------------------------------*/
-.rs2-slick1 .arrow-slick1 {
-  color: rgba(255,255,255,0.3);
+ .arrow-slick1 {
+  color: rgba(13, 13, 13, 0.453);
 }
 
 .rs2-slick1 .arrow-slick1:hover {
-  color: #7280e0;
+  color: #7281e0a7;
 }
 
 .wrap-slick1-dots {
@@ -1391,7 +1391,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   font-size: 39px;
-  color: #ccc;
+  color: #787878;
 
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -1400,7 +1400,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .arrow-slick2:hover {
-  color: #666;
+  color: #393939;
 }
 
 .next-slick2 {
@@ -1439,7 +1439,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .arrow-slick3 {
   font-size: 25px;
-  color: #fff;
+  color: #3a3a3a !important;
   
   position: absolute;
   top: 0;
