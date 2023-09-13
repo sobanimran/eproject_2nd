@@ -271,6 +271,9 @@
     $('.js-show-modal1').on('click',function(e){
         e.preventDefault();
         $('.js-modal1').addClass('show-modal1');
+        var id= $(this).attr('id');
+        $('#chk_id').attr('value',id)
+        
     });
 
     $('.js-hide-modal1').on('click',function(){
