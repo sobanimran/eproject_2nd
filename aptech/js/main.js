@@ -110,20 +110,20 @@
 
 
     /*==================================================================
-    [ Show / hide modal search ]*/
-    $('.js-show-modal-search').on('click', function(){
-        $('.modal-search-header').addClass('show-modal-search');
-        $(this).css('opacity','0');
-    });
+    // [ Show / hide modal search ]*/
+    // $('.js-show-modal-search').on('click', function(){
+    //     $('.modal-search-header').addClass('show-modal-search');
+    //     $(this).css('opacity','0');
+    // });
 
-    $('.js-hide-modal-search').on('click', function(){
-        $('.modal-search-header').removeClass('show-modal-search');
-        $('.js-show-modal-search').css('opacity','1');
-    });
+    // $('.js-hide-modal-search').on('click', function(){
+    //     $('.modal-search-header').removeClass('show-modal-search');
+    //     $('.js-show-modal-search').css('opacity','1');
+    // });
 
-    $('.container-search-header').on('click', function(e){
-        e.stopPropagation();
-    });
+    // $('.container-search-header').on('click', function(e){
+    //     e.stopPropagation();
+    // });
 
 
     /*==================================================================

@@ -3,6 +3,7 @@ include('auth.php');
 include('conn.php');
 include('header.php');
 include('topBar.php');
+$pagname='product';
 include('sidebar.php');
 //echo $con;
 ?>
@@ -28,17 +29,21 @@ include('sidebar.php');
                                     <tr>
                                         <th>ID</th>
                                         <th>NAME</th>
+                                        <th>IMAGE</th>
                                         <th>PRICE</th>
+                                        <th>Qty</th>
                                         <th>STATUS</th>
                                         <th>CREATED AT</th>
-                                        <th>EDITH</th>
+                                        <th>EDIT</th>
                                         <th>DELETE</th>
+                                      
+                                        
                                     </tr>
 
                                 </thead>
                                 <tbody>
                                    <?php
-                                  $sl_qu_product = mysqli_query($con, "SELECT * FROM products");
+                                  $sl_qu_product = mysqli_query($con, "SELECT * FROM products  ORDER BY id DESC ");
                                     if (mysqli_num_rows($sl_qu_product) > 0) {
                                         foreach ($sl_qu_product as $row) {
                                            
@@ -52,7 +57,15 @@ include('sidebar.php');
                                                     <?php echo $row['name']; ?>
                                                 </td>
                                                 <td>
+                                                    <img src="img/product/<?php echo $row['image']; ?>" width="100px" height="100px" alt="<?php echo $row['name']; ?>">
+                                                    
+                                                </td>
+                                                <td>
                                                     <?php echo $row['price']; ?>
+                                                </td>
+                                               
+                                                <td>
+                                                    <?php echo $row['quantity']; ?>
                                                 </td>
                                                
                                                 <td>
@@ -67,11 +80,13 @@ include('sidebar.php');
                                                 </td>
                                                 
                                                 <td>
+                                                    
                                                         <form action="code.php" method="post">
                                                             <input type="hidden" value="<?= $row['id']?>"  name="id" id="">
                                                             <input type="submit" name="product_del" id=""
                                                             class="btn btn-danger btn-sm"value="Delete">
                                                         </form>
+                                                         
                                                 </td>
                                                 
 

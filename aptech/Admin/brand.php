@@ -4,18 +4,17 @@ include('auth.php');
 include('conn.php');
 include('header.php');
 include('topBar.php');
-$pagname='category';
+$pagname='brand';
 include('sidebar.php');
-//echo $con;
 ?>
 
-<!-- Modal -->
-<div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<!-- add Modal -->
+<div class="modal fade" id="brandModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Gift Category</h5>
+                <h5 class="modal-title" id="exampleModalLabel">ADD BRAND</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -24,9 +23,8 @@ include('sidebar.php');
             <form action="code.php" method="post" enctype="multipart/form-data" >
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="">Category Name</label>
+                        <label for="">Brand Name</label>
                         <input type="text" name="name" class="form-control" required>
-                      
                     </div>
                     <div class="form-group">
                         <label for="">Description</label>
@@ -34,21 +32,14 @@ include('sidebar.php');
 
                     </div>
                     <div class="form-group">
-                        <label for="">Category Image</label>
-                        <input type="file" name="cat_img"> 
+                        <label for="">Brand Image</label>
+                        <input type="file" name="brand_img">
                     </div>
-                    <div class="form-group">
-                        <label for="">Trending</label>
-                        <input type="checkbox" name="trending"> Trending
-                    </div>
-                    <div class="form-group">
-                        <label for="">Status</label>
-                        <input type="checkbox" name="status"> Active
-                    </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" name="category_save" class="btn btn-primary">Save </button>
+                    <button type="submit" name="brand_save" class="btn btn-primary">Save </button>
                 </div>
             </form>
 
@@ -56,8 +47,6 @@ include('sidebar.php');
     </div>
 </div>
 <!--modal end -->
-
-
 
 <div class="content-wrapper">
     <section class="content mt-4">
@@ -68,28 +57,29 @@ include('sidebar.php');
                     <div class="card">
                         <div class="card-header">
                             <h4>
-                                Gift Category
-                                <a href="#" class="btn btn-primary float-right" data-toggle="modal"
-                                    data-target="#categoryModal">Add</a>
+                                Brands
+                                <a href="#" class="btn btn-primary float-right"data-toggle="modal"
+                                    data-target="#brandModal" >Add</a>
                             </h4>
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table  table-bordered table-hover" >
+                        </div> 
+                        <div class="card-body">
+                        <table class="table  table-bordered table-hover" >
                                 <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>NAME</th>
-                                        <th>IMAGE</th>
-                                        <th>TREANDING</th>
-                                        <th>STATUS</th>
+                                        <th>Image</th>
+                                        <th>Description</th>
+                                        
                                         <th>CREATED AT</th>
-                                        <th class="text-center" colspan='2'>ACTION</th>
+                                        <th>EDITH</th>
+                                        <th>DELETE</th>
                                     </tr>
 
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sl_qu = mysqli_query($con, "SELECT * FROM categories");
+                                    $sl_qu = mysqli_query($con, "SELECT * FROM brands");
                                     if (mysqli_num_rows($sl_qu) > 0) {
                                         foreach ($sl_qu as $row) {
                                             // echo $row['id'];
@@ -97,32 +87,29 @@ include('sidebar.php');
 
                                             <tr>
                                                 <td>
-                                                    <?= $row['id']; ?>
+                                                    <?= $row['brn_id']; ?>
+                                                
                                                 </td> <!-- alternative way ?= insted of php echo -->
                                                 <td>
-                                                    <?php echo $row['name']; ?>
+                                                    <?php echo $row['brn_name']; ?>
                                                 </td>
                                                 <td>
-                                                    <img src="img/categories/<?=$row['img']?>" width="100px" height="100px" alt="">
-                                                    
+                                                   <img src="<?='img/brands/'.$row['brn_img']; ?>" width="100px" height="100px" alt="brand logo">
                                                 </td>
                                                 <td>
-                                                    <input type="checkbox" disabled name="" id="" <?php echo $row['trending'] == '1' ? 'Checked' : ''; ?>>
+                                                <?= $row['brn_desc']; ?>
                                                 </td>
                                                 <td>
-                                                    <input type="checkbox" disabled name="" readonly id="" <?php echo $row['status'] == '1' ? 'checked' : ''; ?>> <?php echo $row['status'] == '1' ? 'Active' : 'Deactive'; ?>
+                                                    <?php echo $row['creat_at']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $row['created_at']; ?>
-                                                </td>
-                                                <td>
-                                                    <a href="category_edit.php?id=<?= $row['id'] ?>"
+                                                    <a href="brand_edit.php?id=<?= $row['brn_id'] ?>"
                                                         class="btn btn-success btn-sm">Edit</a>
                                                 </td>
                                                 <td>
                                                     <form action="code.php" method="post">
-                                                        <input type="hidden" value=" <?= $row['id']; ?>" name="cate_id" id="">
-                                                        <button class="btn btn-danger btn-sm" name="cate_del_btn" type="submit">Delete</button>
+                                                        <input type="hidden" value=" <?= $row['brn_id']; ?>" name="brn_id" id="">
+                                                        <button class="btn btn-danger btn-sm" name="brn_del_btn" type="submit">Delete</button>
                                                     </form>
                                                     
 
@@ -135,7 +122,7 @@ include('sidebar.php');
                                     } else {
                                         ?>
                                         <tr>
-                                            <td colspan="6">No Record Found</td>
+                                            <td colspan="7" class="text-center">No Record Found</td>
                                         </tr>
                                         <?php
                                     }
@@ -151,6 +138,13 @@ include('sidebar.php');
     </section>
 
 
-</div>
+</div> 
+
+
+
+
+
+
+
 <?php include('script.php'); ?>
 <?php include('footer.php'); ?>

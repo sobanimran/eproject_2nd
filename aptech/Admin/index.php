@@ -4,8 +4,10 @@ include('auth.php');
 include('conn.php');
 include('header.php');
 include('topBar.php');
+$pagname='index';
 include('sidebar.php');
 ?>
+
 <div class="content-wrapper">
     <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->

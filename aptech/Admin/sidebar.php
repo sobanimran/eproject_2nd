@@ -43,33 +43,39 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        <li class="nav-item">
-          <a href="index.php" class="nav-link">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              Dashboard
+        <li class="nav-item" >
+          <a href="index.php" class="nav-link  <?= $pagname!='index'?'':'active ' ?>">
+            <i class="nav-icon  fas fa-tachometer-alt"></i>
+            <p >
+              Dashboar
 
             </p>
           </a>
-
+         
 
         <li class="nav-item has-treeview menu-open">
-          <a href="#" class="nav-link active">
+          <a href="#" class="nav-link  <?= $pagname!='index'?'active':' ' ?>">
             <i class="fas fa-book nav-icon"></i>
             <p>Collection</p>
             <i class="right fas fa-angle-left"></i>
           </a>
           <ul class="nav nav-treeview  ">
             <li class="nav-item  ">
-              <a href="category.php" class="nav-link active">
+              <a href="category.php" class="nav-link <?= $pagname=='category'?'active':' ' ?>">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Category</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="product.php" class="nav-link">
+              <a href="product.php" class="nav-link <?= $pagname=='product'?'active':' ' ?>">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Products</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="brand.php" class="nav-link <?= $pagname=='brand'?'active':' ' ?>">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Brands</p>
               </a>
             </li>
           </ul>

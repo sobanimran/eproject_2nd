@@ -1,4 +1,11 @@
-<?php include 'header.php' ?>
+<?php include 'header.php'; ?>
+<?php  include ('main_product_z@.php'); ?>
+<?php
+$pagname='indexuser';
+$brn_sl_qu=mysqli_query($con,"SELECT * FROM brands order by rand() limit 0,3") or die("ERROR IN CONNECTING DATABASE");
+$cat_sl_qu=mysqli_query($con,"SELECT * FROM categories Where status='1' order by rand()") or die("ERROR IN CONNECTING DATABASE");
+ ?>
+
 	<!-- Slider -->
 	<section class="section-slide">
 		<div class="wrap-slick1 rs2-slick1">
@@ -85,22 +92,30 @@
 	<div class="sec-banner bg0 p-t-95 p-b-55">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 p-b-30 m-lr-auto">
+				<?php 
+				if(mysqli_num_rows($cat_sl_qu)>0){
+					while($row=mysqli_fetch_array($cat_sl_qu)){
+					
+				?>
+				<div  class="col-md-6 p-b-30 m-lr-auto">
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-04.jpg" alt="IMG-BANNER">
+						<img height="400vh" src="Admin/img/categories/<?=$row['img']?>" alt="IMG-BANNER">
 
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<a href="category.php?id=<?=$row[0]?>" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Women
+									<?= $row['name']?>
 								</span>
 
-								<span class="block1-info stext-102 trans-04">
-									New Trend
-								</span>
+								
 							</div>
 
+							<div class="block1-txt-child2 p-b-4 trans-05">
+								<div class="block1-link stext-101 cl0 trans-09">
+								<h3>Description:</h3><?= $row['description']?>
+								</div>
+							</div>
 							<div class="block1-txt-child2 p-b-4 trans-05">
 								<div class="block1-link stext-101 cl0 trans-09">
 									Shop Now
@@ -109,41 +124,23 @@
 						</a>
 					</div>
 				</div>
-
-				<div class="col-md-6 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/banner-05.jpg" alt="IMG-BANNER">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Men
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									New Trend
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
-							</div>
-						</a>
-					</div>
+				<?php }} ?>
 				</div>
-
+				<div class="row">
+				<?php 
+				if(mysqli_num_rows($brn_sl_qu)>0){
+					while($row=mysqli_fetch_array($brn_sl_qu)){
+					
+				?>
 				<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-07.jpg" alt="IMG-BANNER">
+						<img height="300vh" src="	<?= 'Admin/img/brands/'.$row['brn_img']?>" alt="IMG-BANNER">
 
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<a href="brand.php?id=<?=$row['brn_id']?>" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Watches
+								<?= $row['brn_name']?>
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
@@ -159,57 +156,10 @@
 						</a>
 					</div>
 				</div>
-
-				<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/banner-08.jpg" alt="IMG-BANNER">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Bags
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									Spring 2018
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
-							</div>
-						</a>
-					</div>
+				<?php }} ?>
 				</div>
-
-				<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/banner-09.jpg" alt="IMG-BANNER">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Accessories
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									Spring 2018
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
+			
+			
 		</div>
 	</div>
 	
@@ -217,7 +167,12 @@
 	<!-- Product -->
 
 	<section class="bg0 p-t-23 p-b-30">
-	<?php include 'main_product_z@.php' ?>
+	<?php
+		$qu1="SELECT * FROM `products` WHERE trending='1' and view_as='1' ORDER BY rand()";
+		$qu2="SELECT * FROM `products` WHERE trending='1' and view_as='0' ORDER BY rand()";
+		getcards($qu1,$qu2);
+		
+	?>
 	</section>
 
 	<!-- blogs -->
