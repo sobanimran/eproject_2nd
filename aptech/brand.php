@@ -2,7 +2,7 @@
 <?php include('main_product_z@.php'); ?>
 
 
-<section class="bg0 p-t-23 p-b-30">
+<section class="bg0 p-t-23 m-t-120 p-b-30">
     <?php
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
