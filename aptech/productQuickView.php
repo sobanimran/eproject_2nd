@@ -1,25 +1,29 @@
-<?php $con=mysqli_connect("localhost","root","","adminpanel") or die('margaya');?>
-<!--quick view modal -->
-<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
-		<div class="overlay-modal1 js-hide-modal1"></div>
+<?php $con=mysqli_connect("localhost","root","","adminpanel") or die('margaya'); ?>
+	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20" id="ajex_mod">
+		
+	</div>
+<?php  if(isset($_POST["qick_view"])){
+	
+ $id=$_POST['id'];
+$qu=mysqli_query($con,"SELECT * FROM products WHERE id='$id' limit 1");
+$row=mysqli_fetch_array($qu)
+?>
+<script>
+	     
+		 $('.js-hide-modal1').on('click',function(){
+            $('.js-modal1').removeClass('show-modal1');
+        });
+</script>
+<!--quick view modal
+-->
+//<div class="overlay-modal1 js-hide-modal1"></div>
 		<div class="container">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
 				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
 					<img src="images/icons/icon-close.png" alt="CLOSE">
 				</button>
 				
-				<?php 
-			  
-					$a = '<input type="text" value="" name="" id="chk_id">';
-				
-				echo $a;
-				
-				
-				
-
-
-				//$id
-				?>
+			
 
 				<div class="row">
 					<div class="col-md-6 col-lg-7 p-b-30">
@@ -39,7 +43,7 @@
 										</div>
 									</div>
 
-									<div class="item-slick3" data-thumb="Admin/img/product/<?= $row['image2']?>">
+									<!-- <div class="item-slick3" data-thumb="Admin/img/product/<?= $row['image2']?>">
 										<div class="wrap-pic-w pos-relative">
 											<img src="Admin/img/product/<?= $row['image2']?>" alt="IMG-PRODUCT">
 
@@ -48,16 +52,17 @@
 											</a>
 										</div>
 									</div>
-
+									
 									<div class="item-slick3" data-thumb="Admin/img/product/<?= $row['image3']?>">
 										<div class="wrap-pic-w pos-relative">
 											<img src="Admin/img/product/<?= $row['image3']?>" alt="IMG-PRODUCT">
-
+											
 											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="Admin/img/product/<?= $row['image3']?>">
 												<i class="fa fa-expand"></i>
 											</a>
 										</div>
 									</div>
+								-->
 								</div>
 							</div>
 						</div>
@@ -162,4 +167,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
+		<?php  } ?>
+	

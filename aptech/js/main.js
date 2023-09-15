@@ -270,15 +270,24 @@
     [ Show modal1 ]*/
     $('.js-show-modal1').on('click',function(e){
         e.preventDefault();
-        $('.js-modal1').addClass('show-modal1');
         var id= $(this).attr('id');
         $('#chk_id').attr('value',id)
+        $.ajax({
+            url:"productQuickView.php",
+           type:"POST",
+            
+            data:{
+                "qick_view":1,
+                        "id":id
+                
+                    },success:function(responce){
+                     $('#ajex_mod').html(responce)
+                     }
+                })
+                $('.js-modal1').addClass('show-modal1');
         
     });
-
-    $('.js-hide-modal1').on('click',function(){
-        $('.js-modal1').removeClass('show-modal1');
-    });
+  
 
 
 
