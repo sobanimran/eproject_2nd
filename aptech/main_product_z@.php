@@ -1,5 +1,27 @@
 <?php
+// if(isset($_POST['search_Ajex'])){
+//     $keyword= $_POST['key'];
+//     if($keyword!= ''){
+//         return 1;
+//     }else{
+//         return 0;
+//     }
+// }
+$con=mysqli_connect("localhost","root","","adminpanel") or die("mar gaya");
+if(isset($_POST['search_Ajex'])){
+    $filt_val= $_POST['key'];
+    if($filt_val!=""){
+    $qu=mysqli_query($con,"SELECT * FROM products WHERE trending=1  AND concat(name,small_des,long_des) LIKE '%$filt_val%'; ");
+    if(mysqli_num_rows($qu)>0){
+        
 
+        $qu1="SELECT * FROM products
+        WHERE trending=1 AND view_as=1 AND concat(name,small_des,long_des) LIKE '%$filt_val%';";
+        $qu2="SELECT * FROM products
+        WHERE trending=1 AND view_as=0 AND concat(name,small_des,long_des) LIKE '%$filt_val%';";
+        
+       return getcards($qu1,$qu2);}
+    }}
 
  function getcards($qu1,$qu2){
     global $con;
