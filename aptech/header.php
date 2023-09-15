@@ -230,9 +230,9 @@
 					<a href="contact.php">Contact</a>
 				</li>
 				<li>
-				<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				<form class="form-inline my-2 my-lg-0" method="post">
+						<input class="form-control mr-sm-2" name="filter_value1" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" name="filter_btn1"  type="submit">Search</button>
 					</form>
 				</li>
 			</ul>
