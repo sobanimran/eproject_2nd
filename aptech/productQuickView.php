@@ -13,6 +13,29 @@ $row=mysqli_fetch_array($qu)
 		 $('.js-hide-modal1').on('click',function(){
             $('.js-modal1').removeClass('show-modal1');
         });
+
+	//******** */	[ +/- num product ]*/******* */
+    $('.btn-num-product-down').on('click', function(){
+        var numProduct = Number($(this).next().val());
+        if(numProduct > 0) $(this).next().val(numProduct - 1);
+    });
+
+    $('.btn-num-product-up').on('click', function(){
+        var numProduct = Number($(this).prev().val());
+        $(this).prev().val(numProduct + 1);
+    });
+	//---------------------------------------------------------------------
+
+
+			/*-------------------- add-to-cart-------------------------*/
+
+			$('.js-addcart-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to cart !", "success");
+			});
+		});
+
 </script>
 <!--quick view modal
 -->
@@ -43,26 +66,26 @@ $row=mysqli_fetch_array($qu)
 										</div>
 									</div>
 
-									<!-- <div class="item-slick3" data-thumb="Admin/img/product/<?= $row['image2']?>">
+									<!-- <div class="item-slick3" data-thumb="Admin/img/product/ //$row['image2']; ">
 										<div class="wrap-pic-w pos-relative">
-											<img src="Admin/img/product/<?= $row['image2']?>" alt="IMG-PRODUCT">
+											<img src="Admin/img/product/ //$row['image2']" alt="IMG-PRODUCT">
 
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="Admin/img/product/<?= $row['image2']?>">
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="Admin/img/product/<=// $row['image2']>">
 												<i class="fa fa-expand"></i>
 											</a>
 										</div>
 									</div>
 									
-									<div class="item-slick3" data-thumb="Admin/img/product/<?= $row['image3']?>">
+									<div class="item-slick3" data-thumb="Admin/img/product/<=// $row['image3']>">
 										<div class="wrap-pic-w pos-relative">
-											<img src="Admin/img/product/<?= $row['image3']?>" alt="IMG-PRODUCT">
+											<img src="Admin/img/product/<=// $row['image3']>" alt="IMG-PRODUCT">
 											
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="Admin/img/product/<?= $row['image3']?>">
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="Admin/img/product/<=// $row['image3']>">
 												<i class="fa fa-expand"></i>
 											</a>
 										</div>
 									</div>
-								-->
+	-->
 								</div>
 							</div>
 						</div>
@@ -71,16 +94,17 @@ $row=mysqli_fetch_array($qu)
 					<div class="col-md-6 col-lg-5 p-b-30">
 						<div class="p-r-50 p-t-5 p-lr-0-lg">
 							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-								Lightweight Jacket
+							<?=	$row['name']; ?>
 							</h4>
 
 							<span class="mtext-106 cl2">
-								$58.79
+							<?=	$row['price']; ?>
 							</span>
 
 							<p class="stext-102 cl3 p-t-23">
-								Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+							<?=	$row['long_des']; ?>
 							</p>
+							
 							
 						
 							<div class="p-t-33">
@@ -102,13 +126,13 @@ $row=mysqli_fetch_array($qu)
 										</div>
 									</div>
 								</div>
-
+								
 								<div class="flex-w flex-r-m p-b-10">
 									<div class="size-203 flex-c-m respon6">
 										Color
 									</div>
 
-									<div class="size-204 respon6-next">
+										<div class="size-204 respon6-next">
 										<div class="rs1-select2 bor8 bg0">
 											<select class="js-select2" name="time">
 												<option>Choose an option</option>

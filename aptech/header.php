@@ -39,12 +39,13 @@
 </head>
 
 <body class="animsition">
-
+	
 	<!-- Header -->
 	<header>
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
 			<!-- Topbar -->
+			<?php include("Admin/message.php") ?>
 			<!--<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
 					<div class="left-top-bar">
@@ -84,11 +85,11 @@
 						<ul class="main-menu">
 							<li class="active-menu">
 								<a href="index.php">Home</a>
-								<ul class="sub-menu">
+							<!--	<ul class="sub-menu">
 									<li><a href="index.php">Homepage 1</a></li>
 									<li><a href="home-02.php">Homepage 2</a></li>
 									<li><a href="home-03.php">Homepage 3</a></li>
-								</ul>
+								</ul>  -->
 							</li>
 
 							<li>
@@ -116,10 +117,12 @@
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m">
 						<!--	search icon -->
-						<form method="post" class="form-inline my-2 my-lg-0">
-						<input name="filter_value" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-primary my-2 my-sm-0" name="filter_btn" type="submit">Search</button>
-					</form>
+						<form method="post" class="d-flex form-inline my-2 my-lg-0">
+							<input name="filter_value" class="form-control mr-sm-2 col-8" type="search"
+								placeholder="Search" aria-label="Search">
+							<button class="btn btn-outline-primary my-2 my-sm-0 col-3" name="filter_btn"
+								type="submit">Search</button>
+						</form>
 
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="2">
@@ -131,6 +134,16 @@
 							data-notify="0">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
+
+
+						
+							<a href="#" class="h5 trans-04 p-l-22 p-r-11 "
+								data-toggle="modal" data-target="#loginmodel">
+								<i class="fa fa-user " aria-hidden="true"></i>
+								Login
+							</a>
+					
+
 					</div>
 				</nav>
 			</div>
@@ -200,7 +213,7 @@
 			<ul class="main-menu-m">
 				<li>
 					<a href="index.php">Home</a>
-					<ul class="sub-menu-m">
+					<!--<ul class="sub-menu-m">
 						<li><a href="index.php">Homepage 1</a></li>
 						<li><a href="home-02.php">Homepage 2</a></li>
 						<li><a href="home-03.php">Homepage 3</a></li>
@@ -208,6 +221,7 @@
 					<span class="arrow-main-menu-m">
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</span>
+				-->
 				</li>
 
 				<li>
@@ -230,13 +244,22 @@
 					<a href="contact.php">Contact</a>
 				</li>
 				<li>
-				<form class="form-inline my-2 my-lg-0" method="post">
-						<input class="form-control mr-sm-2" name="filter_value1" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success my-2 my-sm-0" name="filter_btn1"  type="submit">Search</button>
+					<form class="form-inline m-l-18 my-2 my-lg-0" method="post">
+						<input class="form-control mr-sm-2" name="filter_value1" type="search" placeholder="Search"
+							aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" name="filter_btn1"
+							type="submit">Search</button>
 					</form>
 				</li>
+				<li class="d-flex">
+				<a href="#" class="justify-content-end  h1 rounded  btn-outline-success  p-l-22 p-r-11 "
+								data-toggle="modal" data-target="#loginmodel">
+								<i class="fa fa-user" aria-hidden="true"></i>
+								Login
+							</a>
+				</li>
 			</ul>
-		
+
 		</div>
 
 	</header>
@@ -249,7 +272,7 @@
 
 		<div class="header-cart flex-col-l p-l-65 p-r-25">
 			<div class="header-cart-title flex-w flex-sb-m p-b-8">
-				
+
 				<span class="mtext-103 cl2">
 					Your Cart
 				</span>
@@ -326,6 +349,54 @@
 							Check Out
 						</a>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--login Modal -->
+	<!-- Modal -->
+	<div class="modal fade m-t-100" id="loginmodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1></h1>
+					<h3 class="modal-title text-primary text-center" id="exampleModalLabel">LOGIN FORM</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					
+						<form action="Admin/logincode.php" method="POST">
+							
+								<div class="form-group m-b-10">
+									
+										 <label class="form-label" for="email">Email Id</label>
+										
+										<input class="form-control" type="email" name="email"
+												id="email">
+									
+									
+								</div>
+								<div class="form-group mt-4">
+									
+										<label for="pass">Password</label>
+										
+											<input class="form-control" type="password" name="password" id="pass">
+									
+								</div>
+						
+
+
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" name="loginbtn" class="btn btn-primary btn-block">Login</button>
+					</form>
 				</div>
 			</div>
 		</div>

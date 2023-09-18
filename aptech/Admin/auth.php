@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['auth'])){
     $_SESSION['authstatus']="login to Access Dashboard";
-    header("location:login.php");
+    header("location:../index.php");
     
 exit(0);
 }else{

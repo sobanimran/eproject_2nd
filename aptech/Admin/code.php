@@ -309,7 +309,7 @@ if (isset($_POST['logout_btn'])) {
     unset($_SESSION['auth']);
     unset($_SESSION['auth-user']);
     $_SESSION['status'] = "Logged out successfully";
-    header("location:login.php");
+    header("location:../index.php");
     exit(0);
 }
 
