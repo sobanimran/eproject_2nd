@@ -13,7 +13,8 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 <section class="section-slide">
 	<div class="wrap-slick1 rs2-slick1">
 		<div class="slick1">
-			<div class="item-slick1 bg-overlay" style="background-image: url(images/slide-01.jpg);" data-thumb="images/thumb-01.jpg" data-caption="Women’s Wear">
+			<div class="item-slick1 bg-overlay" style="background-image: url(images/slide-01.jpg);"
+				data-thumb="images/thumb-01.jpg" data-caption="Women’s Wear">
 				<div class="container h-full">
 					<div class="flex-col-c-m h-full p-t-100 p-b-60 respon5">
 						<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
@@ -29,7 +30,8 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 						</div>
 
 						<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-							<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+							<a href="product.html"
+								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
 								Shop Now
 							</a>
 						</div>
@@ -37,7 +39,8 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 				</div>
 			</div>
 
-			<div class="item-slick1 bg-overlay" style="background-image: url(images/slide-01.jpg);" data-thumb="images/thumb-02.jpg" data-caption="Men’s Wear">
+			<div class="item-slick1 bg-overlay" style="background-image: url(images/slide-01.jpg);"
+				data-thumb="images/thumb-02.jpg" data-caption="Men’s Wear">
 				<div class="container h-full">
 					<div class="flex-col-c-m h-full p-t-100 p-b-60 respon5">
 						<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
@@ -53,7 +56,8 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 						</div>
 
 						<div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-							<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+							<a href="product.html"
+								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
 								Shop Now
 							</a>
 						</div>
@@ -61,7 +65,8 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 				</div>
 			</div>
 
-			<div class="item-slick1 bg-overlay" style="background-image: url(images/slide-01.jpg);" data-thumb="images/thumb-03.jpg" data-caption="Men’s Wear">
+			<div class="item-slick1 bg-overlay" style="background-image: url(images/slide-01.jpg);"
+				data-thumb="images/thumb-03.jpg" data-caption="Men’s Wear">
 				<div class="container h-full">
 					<div class="flex-col-c-m h-full p-t-100 p-b-60 respon5">
 						<div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
@@ -77,7 +82,8 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 						</div>
 
 						<div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-							<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+							<a href="product.html"
+								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
 								Shop Now
 							</a>
 						</div>
@@ -99,13 +105,14 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 			if (mysqli_num_rows($cat_sl_qu) > 0) {
 				while ($row = mysqli_fetch_array($cat_sl_qu)) {
 
-			?>
+					?>
 					<div class="col-md-6 p-b-30 m-lr-auto">
 						<!-- Block1 -->
 						<div class="block1 wrap-pic-w">
 							<img height="400vh" src="Admin/img/categories/<?= $row['img'] ?>" alt="IMG-BANNER">
 
-							<a href="category.php?id=<?= $row[0] ?>" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+							<a href="category.php?id=<?= $row[0] ?>"
+								class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 								<div class="block1-txt-child1 flex-col-l">
 									<span class="block1-name ltext-102 trans-04 p-b-8">
 										<?= $row['name'] ?>
@@ -116,7 +123,8 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 
 								<div class="block1-txt-child2 p-b-4 trans-05">
 									<div class="block1-link stext-101 cl0 trans-09">
-										<h3>Description:</h3><?= $row['description'] ?>
+										<h3>Description:</h3>
+										<?= $row['description'] ?>
 									</div>
 								</div>
 								<div class="block1-txt-child2 p-b-4 trans-05">
@@ -127,7 +135,7 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 							</a>
 						</div>
 					</div>
-			<?php }
+				<?php }
 			} ?>
 		</div>
 		<div class="row">
@@ -135,13 +143,14 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 			if (mysqli_num_rows($brn_sl_qu) > 0) {
 				while ($row = mysqli_fetch_array($brn_sl_qu)) {
 
-			?>
+					?>
 					<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
 						<!-- Block1 -->
 						<div class="block1 wrap-pic-w">
 							<img height="300vh" src="	<?= 'Admin/img/brands/' . $row['brn_img'] ?>" alt="IMG-BANNER">
 
-							<a href="brand.php?id=<?= $row['brn_id'] ?>" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+							<a href="brand.php?id=<?= $row['brn_id'] ?>"
+								class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 								<div class="block1-txt-child1 flex-col-l">
 									<span class="block1-name ltext-102 trans-04 p-b-8">
 										<?= $row['brn_name'] ?>
@@ -160,7 +169,7 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 							</a>
 						</div>
 					</div>
-			<?php }
+				<?php }
 			} ?>
 		</div>
 
@@ -196,6 +205,7 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 		</div>
 
 	</div>
+	<input type="text" value="" name="get_vla_ch" id="get_vla_ch">
 	<div id="hold">
 
 
@@ -213,17 +223,17 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 						WHERE trending=1 AND view_as=0 AND concat(name,small_des,long_des) LIKE '%$filt_val%';";
 
 					getcards($qu1, $qu2);
-				}else{
-					echo	"<h2 class='text-center text-danger'>NO PRODDUCT FOUND RELATED TO THIS KEY WORD  </h2>";
-					}
-			}else{
-			echo	"<h2 class='text-center text-danger'> kindly fill input field search field is empty or refresh the page  </h2>";
+				} else {
+					echo "<h2 class='text-center text-danger'>NO PRODDUCT FOUND RELATED TO THIS KEY WORD  </h2>";
+				}
+			} else {
+				echo "<h2 class='text-center text-danger'> kindly fill input field search field is empty or refresh the page  </h2>";
 			}
 
 
 			//$qu1="SELECT * FROM `products` WHERE trending='1' and view_as='1' ORDER BY rand()";
 			//$qu2="SELECT * FROM `products` WHERE trending='1' and view_as='0' ORDER BY rand()";
-
+		
 			//getcards($qu1,$qu2);
 		}
 		if (isset($_POST['filter_btn1'])) {
@@ -239,27 +249,27 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 						WHERE trending=1 AND view_as=0 AND concat(name,small_des,long_des) LIKE '%$filt_val%';";
 
 					getcards($qu1, $qu2);
-				}else{
-					echo	"<h2 class='text-center text-danger'> NO PRODUCT FOUND RELATED TO THIS KEY WOARD  </h2>";
-					}
-			}else{
-				echo	"<h2 class='text-center text-danger'> kindly fill input field search field is empty or refresh the page  </h2>";
+				} else {
+					echo "<h2 class='text-center text-danger'> NO PRODUCT FOUND RELATED TO THIS KEY WOARD  </h2>";
 				}
+			} else {
+				echo "<h2 class='text-center text-danger'> kindly fill input field search field is empty or refresh the page  </h2>";
+			}
 
 
 			//$qu1="SELECT * FROM `products` WHERE trending='1' and view_as='1' ORDER BY rand()";
 			//$qu2="SELECT * FROM `products` WHERE trending='1' and view_as='0' ORDER BY rand()";
-
+		
 			//getcards($qu1,$qu2);
 		}
 		// *********************** WITH OUT SEARCH PRODUCT ******************
 		if (!isset($_POST['filter_btn'])) {
-		if (!isset($_POST['filter_btn1'])) {
-			$qu1 = "SELECT * FROM `products` WHERE trending='1' and view_as='1' ORDER BY rand()";
-			$qu2 = "SELECT * FROM `products` WHERE trending='1' and view_as='0' ORDER BY rand()";
+			if (!isset($_POST['filter_btn1'])) {
+				$qu1 = "SELECT * FROM `products` WHERE trending='1' and view_as='1' ORDER BY rand()";
+				$qu2 = "SELECT * FROM `products` WHERE trending='1' and view_as='0' ORDER BY rand()";
 
-			getcards($qu1, $qu2);
-		}
+				getcards($qu1, $qu2);
+			}
 		}
 
 		?>
@@ -314,7 +324,8 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 						</h4>
 
 						<p class="stext-108 cl6">
-							Duis ut velit gravida nibh bibendum commodo. Suspendisse pellentesque mattis augue id euismod. Interdum et male-suada fames
+							Duis ut velit gravida nibh bibendum commodo. Suspendisse pellentesque mattis augue id
+							euismod. Interdum et male-suada fames
 						</p>
 					</div>
 				</div>
@@ -358,7 +369,8 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 						</h4>
 
 						<p class="stext-108 cl6">
-							Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame
+							Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla
+							in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame
 						</p>
 					</div>
 				</div>
@@ -402,7 +414,8 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 						</h4>
 
 						<p class="stext-108 cl6">
-							Proin nec vehicula lorem, a efficitur ex. Nam vehicula nulla vel erat tincidunt, sed hendrerit ligula porttitor. Fusce sit amet maximus nunc
+							Proin nec vehicula lorem, a efficitur ex. Nam vehicula nulla vel erat tincidunt, sed
+							hendrerit ligula porttitor. Fusce sit amet maximus nunc
 						</p>
 					</div>
 				</div>
@@ -418,37 +431,56 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 <?php include 'script.php' ?>
 <script>
 	// A $( document ).ready() block.
-	$(document).ready(function() {
-		$('#search_bar').on("click", function(e) {
+	$(document).ready(function () {
+		$('#search_bar').on("click", function (e) {
 			e.preventDefault();
 			var keyword = $('#keyword').val();
 			console.log(keyword);
 			$.ajax({
-					url: "main_product_z@.php",
-					type: "post",
-					data: {
-						'search_Ajex': 1,
-						'key': keyword,
-					},
-					success: function(response) {
-						$('#hold').html(response);
-						//  var	qu1=`SELECT * FROM products WHERE trending=1 AND view_as=1 AND concat(name,small_des,long_des) LIKE '%${keyword}%'`;
-						// var		qu2=`SELECT * FROM products WHERE trending=1 AND view_as=0 AND concat(name,small_des,long_des) LIKE '%${keyword}%'`;
-						// console.log(response)
-						// 				getcards($qu1,$qu2);
-						// if(response==1){
+				url: "main_product_z@.php",
+				type: "post",
+				data: {
+					'search_Ajex': 1,
+					'key': keyword,
+				},
+				success: function (response) {
+					let result_ser = response
+					$('#get_vla_ch').attr('value',keyword)
+					alert(keyword);
+					//$('#hold').html("");
+					
 
-						// 			}
-						// 			else{
-						// 				alert("kindly fill input field")
-						// 			}
 
-					}
+
+
+
+					//  var	qu1=`SELECT * FROM products WHERE trending=1 AND view_as=1 AND concat(name,small_des,long_des) LIKE '%${keyword}%'`;
+					// var		qu2=`SELECT * FROM products WHERE trending=1 AND view_as=0 AND concat(name,small_des,long_des) LIKE '%${keyword}%'`;
+					// console.log(response)
+					// 				getcards($qu1,$qu2);
+					// if(response==1){
+
+					// 			}
+					// 			else{
+					// 				alert("kindly fill input field")
+					// 			}
+
 				}
+			}
 
 			)
 
 		})
 	});
+</script>
+<script>
+// ------------- **** productQuickview -add-to-cart btn ------****************
+$(document).on("click",".js-addcart-detail",function() {
+	// var prodId=
+	var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+	$(document).on("click",".js-addcart-detail",function(){
+		swal(nameProduct, "is added to cart !", "success");
+	});
+});
 </script>
 <?php include 'footer.php' ?>

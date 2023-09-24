@@ -2,6 +2,7 @@
 	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20" id="ajex_mod">
 		
 	</div>
+
 <?php  if(isset($_POST["qick_view"])){
 	
  $id=$_POST['id'];
@@ -27,15 +28,9 @@ $row=mysqli_fetch_array($qu)
 	//---------------------------------------------------------------------
 
 
-			/*-------------------- add-to-cart-------------------------*/
+		
 
-			$('.js-addcart-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
-			});
-		});
-
+	
 </script>
 <!--quick view modal
 -->

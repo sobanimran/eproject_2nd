@@ -261,14 +261,14 @@
     $('.js-show-modal1').on('click',function(e){
         e.preventDefault();
         var id= $(this).attr('id');
-        $('#chk_id').attr('value',id)
+       // $('#chk_id').attr('value',id)
         $.ajax({
             url:"productQuickView.php",
-           type:"POST",
+            type:"POST",
             
             data:{
                 "qick_view":1,
-                        "id":id
+                     "id":id
                 
                     },success:function(responce){
                      $('#ajex_mod').html(responce)
