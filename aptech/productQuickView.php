@@ -2,7 +2,20 @@
 	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20" id="ajex_mod">
 		
 	</div>
-
+	<script>
+// ------------- **** productQuickview -add-to-cart btn ------****************
+		$(document).on("click",".js-addcart-detail",function() {
+			// var prodId=
+			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+			//$(document).on("click",".js-addcart-detail",function(){
+				$(this).on("click",function(){
+					
+					
+					
+					swal(nameProduct, "is added to cart !", "success");
+				});
+			});
+			</script>
 <?php  if(isset($_POST["qick_view"])){
 	
  $id=$_POST['id'];

@@ -474,13 +474,7 @@ $cat_sl_qu = mysqli_query($con, "SELECT * FROM categories Where status='1' order
 	});
 </script>
 <script>
-// ------------- **** productQuickview -add-to-cart btn ------****************
-$(document).on("click",".js-addcart-detail",function() {
-	// var prodId=
-	var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-	$(document).on("click",".js-addcart-detail",function(){
-		swal(nameProduct, "is added to cart !", "success");
-	});
-});
+
+
 </script>
 <?php include 'footer.php' ?>
