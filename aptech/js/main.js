@@ -261,7 +261,7 @@
     $('.js-show-modal1').on('click',function(e){
         e.preventDefault();
         var id= $(this).attr('id');
-       // $('#chk_id').attr('value',id)
+      //  $('#chk_id').attr('value',id)
         $.ajax({
             url:"productQuickView.php",
             type:"POST",
